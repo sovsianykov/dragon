@@ -1,0 +1,69 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    left: 0;
+    background: url("img/map.jpg") no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+.dr {
+    position:absolute;
+}
+.move {
+    width: 200px;
+    height: 180px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -100px;
+}
+.move button img {
+    width: 60px;
+    height: auto;
+
+}
+.move button {
+    position: absolute;
+    background: none;
+   border:none;
+    outline: none;
+}
+.move .up {
+    left: 50%;
+    margin-left: -30px;
+}
+.move .down {
+    left: 50%;
+    margin-left: -30px;
+    bottom: 0;
+}
+.move .left {
+    left:0;
+    top:50%;
+    margin-top: -30px;
+
+}
+.move .right {
+    right: 0;
+    top: 50%;
+    margin-top: -30px;
+}
+.move .up img {
+     transform: rotate(180deg) ;
+ }
+.move .right img {
+    transform: rotate(-90deg) ;
+}
+.move .left img {
+    transform: rotate(90deg) ;
+}
+
+    
+        

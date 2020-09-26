@@ -1,0 +1,166 @@
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="jQwury.js"></script>
+</head>
+<body>
+<div class="back">
+    <img class="dr" src="img/dragon.gif" alt="">
+    <div class="move">
+        <button class="left"><img src="img/arrow.png" alt=""></button>
+        <button class="up"><img src="img/arrow.png" alt=""></button>
+        <button class="down"><img src="img/arrow.png" alt=""></button>
+        <button class="right"><img src="img/arrow.png" alt=""></button>
+    </div>
+
+</div>
+
+
+<script>
+    var up = $('.up'),
+        down = $('.down'),
+        left = $('.left'),
+        right = $('.right'),
+        dragon = $('.dr');
+    var move = {};
+    var ml = 0, mt = 0, clicked = false , Kclicked = false;
+
+
+    move.toLeft = function () {
+        clicked = true;
+        setInterval(function () {
+
+            if (clicked) {
+                ml -= 1;
+                dragon.css({'margin-left': ml})
+
+
+            }
+
+
+        }, 10)
+
+
+    };
+    move.toRight = function () {
+        clicked = true;
+
+        setInterval(function () {
+            if (clicked) {
+                ml += 1;
+                dragon.css({'margin-left': ml})
+
+
+            }
+
+
+
+        }, 10)
+
+
+    };
+    move.toUp = function () {
+        clicked = true;
+        setInterval(function () {
+
+            if (clicked) {
+                mt -= 1;
+                dragon.css({'margin-top': mt})
+            }
+
+
+        }, 30)
+
+    };
+    move.toDown = function () {
+        clicked = true;
+        setInterval(function () {
+            if (clicked) {
+
+                mt += 1;
+                dragon.css({'margin-top': mt})
+
+            }
+
+
+        }, 30);
+
+    };
+
+    $('*').mouseup(function (event) {
+        clicked = false;
+    });
+
+    right.mousedown(move.toRight);
+    left.mousedown(move.toLeft);
+    up.mousedown(move.toUp);
+    down.mousedown(move.toDown);
+
+    $(window).keyup(function () {
+        Kclicked = false;
+
+
+
+    });
+    move.toRightKey = function () {
+        Kclicked = true ;
+        if (Kclicked) {
+            ml += 1;
+            dragon.css({'margin-left': ml})
+        }
+
+    };
+    move.toLeftKey = function () {
+        Kclicked = true ;
+        if (Kclicked) {
+            ml -= 1;
+            dragon.css({'margin-left': ml})
+        }
+
+    };
+    move.toUpKey = function () {
+        Kclicked = true ;
+        if (Kclicked) {
+            mt -= 1;
+            dragon.css({'margin-top': mt})
+        }
+
+    };
+    move.toDownKey = function () {
+        Kclicked = true ;
+        if (Kclicked) {
+            mt += 1;
+            dragon.css({'margin-top': mt})
+        }
+
+    };
+
+    $(window).keydown(function (event) {
+        console.log(1);
+
+
+            if (event.keyCode === 38) {
+                move.toUpKey()
+
+
+            }
+            if (event.keyCode === 39) {
+
+                move.toRightKey()
+            }
+            if (event.keyCode === 40) {
+                move.toDownKey()
+            }
+            if (event.keyCode === 37) {
+                move.toLeftKey()
+            }
+
+
+    });
+
+
+</script>
+</body>
+</html>
